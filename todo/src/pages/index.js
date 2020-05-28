@@ -1,12 +1,12 @@
-import React from "react";
+import { Link } from 'gatsby';
+import React from 'react';
+import Header from '../components/header';
 
-export class test{
-  start(dataMessage) {
-  return <div>Hello {dataMessage}</div>
-  }
-}
-
-export default function() {
-  let start = new test();
-  return start.start('world')
-}
+export default () => (
+    <div style={{ color: 'purple' }}>
+        <p>What a world</p>
+        <Header headerText="Hello gatsby" />
+        <img src="https://source.unsplash.com/random/400x200" alt="" />
+        <Link to="/contact/">contact</Link>
+    </div>
+);
