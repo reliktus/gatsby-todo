@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../components/container';
-import Layout from '../components/layout';
+import Container from '../../components/container';
+import Layout from '../../components/layout';
 import styles from './about-css-modules.module.css';
 
 const User = (props) => (
@@ -30,7 +30,7 @@ const users = [
     )
 ];
 
-export const AboutCss = ({ pageContext, location }) => {
+const Testowa = ({ pageContext, location, data }) => {
     const {
         breadcrumb: { crumbs }
     } = pageContext;
@@ -53,3 +53,5 @@ export const AboutCss = ({ pageContext, location }) => {
         </Layout>
     );
 };
+
+export default Testowa;

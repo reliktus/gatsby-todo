@@ -9,6 +9,7 @@ module.exports = {
     siteMetadata: {
         // siteUrl: required (Gotcha: do not include a trailing slash at the end)
         siteUrl: 'http://localhost:8000',
+        title: 'Test title from config',
         menuLinks: [
             {
                 name: 'home',
