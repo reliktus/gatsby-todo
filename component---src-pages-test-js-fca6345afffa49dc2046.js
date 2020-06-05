@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{nsZw:function(n,e,t){"use strict";t.r(e);var s=t("q1tI"),a=t.n(s);e.default=function(){return a.a.createElement("div",null,"Test class")}}}]);
-//# sourceMappingURL=component---src-pages-test-js-fca6345afffa49dc2046.js.map
