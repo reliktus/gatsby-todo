@@ -11,7 +11,14 @@ const ListLink = (props) => (
 export default function Layout({ crumbs, customCrumbLabel, children }) {
     const data = useStaticQuery(
         graphql`
-            query {
+            {
+                allFile(filter: { relativeDirectory: { eq: "pages" } }) {
+                    edges {
+                        node {
+                            name
+                        }
+                    }
+                }
                 site {
                     siteMetadata {
                         title
@@ -20,6 +27,9 @@ export default function Layout({ crumbs, customCrumbLabel, children }) {
             }
         `
     );
+    const menuPages = data.allFile.edges.map((el) => {
+        return <ListLink to={`/${el.node.name}`}>{el.node.name}</ListLink>;
+    });
     return (
         <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
             <header style={{ marginBottom: `1.5rem` }}>
@@ -32,12 +42,10 @@ export default function Layout({ crumbs, customCrumbLabel, children }) {
                     </h3>
                 </Link>
                 <ul style={{ listStyle: `none`, float: `right` }}>
-                    <ListLink to="/">Home</ListLink>
-                    <ListLink to="/about/">About</ListLink>
+                    {menuPages}
                     <ListLink to="/aboutCss/about-css-modules/">
-                        about-css-modules
+                        about css nested page
                     </ListLink>
-                    <ListLink to="/contact/">Contact</ListLink>
                 </ul>
                 <Breadcrumb
                     crumbs={crumbs}
