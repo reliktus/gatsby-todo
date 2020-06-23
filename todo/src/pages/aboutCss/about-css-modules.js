@@ -13,18 +13,14 @@ export default ({ pageContext, location, data }) => {
             </div>
         </div>
     );
-
-    const sampleUser = (name, avatar, excerpt) => {
-        return { username: name, avatar: avatar, excerpt: excerpt };
-    };
-
+    
     const users = [
-        sampleUser(
+         new sampleUser(
             'Jane Doe',
             'https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg',
             "I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        ),
-        sampleUser(
+            ),
+        new sampleUser(
             'Jane Doe',
             'https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg',
             "I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
@@ -52,3 +48,13 @@ export default ({ pageContext, location, data }) => {
         </Layout>
     );
 };
+
+export class sampleUser{
+    constructor(name, avatar, excerpt) {
+        this.name = name;
+        this.avatar = avatar;
+        this.excerpt = excerpt;
+        this.init();
+    }
+    init = () => ({username: this.name, avatar: this.avatar, excerpt: this.excerpt})
+}

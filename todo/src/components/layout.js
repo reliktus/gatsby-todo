@@ -4,7 +4,7 @@ import React from 'react';
 import query from './query/layoutQuery';
 
 export default function Layout({ crumbs, customCrumbLabel, children }) {
-    const data = new query();
+    const data = query();
     const ListLink = (props) => (
         <li style={{ display: `inline-block`, marginRight: `1rem` }}>
             <Link to={props.to}>{props.children}</Link>
