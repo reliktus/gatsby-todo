@@ -1,34 +1,22 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 import React from 'react';
-
-const ListLink = (props) => (
-    <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-        <Link to={props.to}>{props.children}</Link>
-    </li>
-);
+import query from './query/layoutQuery';
 
 export default function Layout({ crumbs, customCrumbLabel, children }) {
-    const data = useStaticQuery(
-        graphql`
-            {
-                allFile(filter: { relativeDirectory: { eq: "pages" } }) {
-                    edges {
-                        node {
-                            name
-                        }
-                    }
-                }
-                site {
-                    siteMetadata {
-                        title
-                    }
-                }
-            }
-        `
+    const data = new query();
+    const ListLink = (props) => (
+        <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+            <Link to={props.to}>{props.children}</Link>
+        </li>
     );
-    const menuPages = data.allFile.edges.map((el) => {
-        return <ListLink to={`/${el.node.name}`}>{el.node.name}</ListLink>;
+
+    const menuPages = data.allFile.edges.map((el, index) => {
+        return (
+            <ListLink key={index} to={`/${el.node.name}`}>
+                {el.node.name}
+            </ListLink>
+        );
     });
     return (
         <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
