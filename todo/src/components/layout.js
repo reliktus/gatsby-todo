@@ -9,8 +9,8 @@ export default function Layout({ crumbs, customCrumbLabel, children }) {
 	const data = query();
 
 	return (
-		<div className="bg-gray-300 text-2xl text-center flex flex-col flex-1 min-h-screen">
-			<header className="mb-2 flex flex-row justify-center flex-wrap">
+		<div className="text-2xl text-center flex flex-col flex-1 min-h-screen">
+			<header className="bg-gray-300 mb-4 flex flex-row justify-center flex-now-rap">
 				<Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
 					<h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
 				</Link>
@@ -19,8 +19,8 @@ export default function Layout({ crumbs, customCrumbLabel, children }) {
 				</p>
 				<Menu />
 			</header>
-			<section className="">{children}</section>
-			<footer className="">
+			<section class="flex-1">{children}</section>
+			<footer className="bg-gray-300">
 				{/* <Menu /> */}
 				Impressum | Copyright 2020
 				<symbol id="icon-facebook" viewBox="0 0 32 32">
