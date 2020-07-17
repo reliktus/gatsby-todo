@@ -9,7 +9,7 @@ module.exports = {
 	siteMetadata: {
 		// siteUrl: required (Gotcha: do not include a trailing slash at the end)
 		siteUrl: 'http://localhost:8000',
-		title: 'Reliktus test page'
+		title: 'Reliktus'
 	},
 	plugins: [
 		`gatsby-plugin-postcss`,
