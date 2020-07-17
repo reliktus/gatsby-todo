@@ -14,7 +14,7 @@ export default function Layout({ crumbs, customCrumbLabel, children }) {
 	</div>);
 	const test = () => true;
 	return (
-		<div className="text-2xl flex flex-col flex-1 min-h-screen">
+		<div className="text-2xl flex flex-col flex-1 min-h-screen justify-center bg-gray-400">
 			<header className="bg-gray-300 p-4 flex flex-col max-w-md">
 				<div className="flex flex-row justify-between">
 					<Link to="/">
