@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import query from './query/layoutQuery';
-
+import helpers from './helpers';
 // export default class Menu extends React.Component {
 export default function Menu() {
 	// render() {
@@ -11,20 +11,23 @@ export default function Menu() {
 		</li>
 	);
 	const data = query();
-	const menuPages = data.allFile.edges.map((el, index) => {
-		return (
+	const menuPages = data.allFile.edges.map((el, index) =>
+		el.node.name != 'index' && (
 			<ListLink key={index} to={`/${el.node.name}`}>
-				{el.node.name}
+				{helpers(el.node.name)}
 			</ListLink>
-		);
-	});
+		)
+	);
 	return (
 		<div>
-			<ul style={{ listStyle: `none` }}>
+			<ul>
+				<ListLink to="/">Home</ListLink>
 				{menuPages}
-				<ListLink to="/aboutCss/about-css-modules/">about css nested page</ListLink>
+				{/* <ListLink to="/aboutCss/about-css-modules/">about css nested page</ListLink> */}
 			</ul>{' '}
 		</div>
 	);
 	// }
 }
+
+
