@@ -7,4 +7,14 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    transition: all 1s linear;
+    filter: invert(0);
+}
+
+.dark {
+    filter: invert(88%);
+}
+
+.dark img {
+    filter: invert(100%);
 }
