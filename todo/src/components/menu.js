@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import query from './query/layoutQuery';
-import {capitalizeTitle} from './helpers';
+import { capitalizeTitle } from './helpers';
+import ColorModeSwitch from './panel/ColorModeSwitch';
 export default function Menu() {
 	const MenuItem = (props) => (
 		<li className="pr-4">
@@ -24,13 +25,8 @@ export default function Menu() {
 				{/* <ListLink to="/aboutCss/about-css-modules/">about css nested page</ListLink> */}
 			</ul>{' '}
 			<div class="inline-flex">
-  <button onClick={()=>colorChange('default')}  class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-    Normal
-  </button>
-  <button onClick={()=>colorChange('dark')} class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-    Dark
-  </button>
-</div>
+				<ColorModeSwitch />
+			</div>
 		</div>
 	);
 }
