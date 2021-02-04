@@ -10,7 +10,7 @@ export default ({ pageContext, location }) => {
 
     return (
         <Layout crumbs={crumbs} crumbLabel={customCrumbLabel}>
-            <div>
+            <section className="flex flex-col items-center">
                 <h1>I'd love to talk! Email me at the address below</h1>
                 <p>
                     <a href="mailto:me@example.com">me@example.com</a>
@@ -18,7 +18,7 @@ export default ({ pageContext, location }) => {
                 <p>
                     <Link to="/">Home</Link>
                 </p>
-            </div>
+            </section>
         </Layout>
     );
 };

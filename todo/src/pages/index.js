@@ -7,7 +7,7 @@ export default ({ pageContext, location }) => {
 
 	return (
 		<Layout crumbs={crumbs} crumbLabel={customCrumbLabel}>
-			<section className="flex flex-col">
+			<section className="flex flex-col items-center">
 				<section className="flex justify-center">
 					<img src="https://source.unsplash.com/random/400x200" alt="" />
 				</section>

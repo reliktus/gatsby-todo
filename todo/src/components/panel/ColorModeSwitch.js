@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LocalStorageHandler from '../../utils/LocalStorageHandler';
 
 export default function ColorModeSwitch() {
-    const body = document.body;
+    const [darkMode, setDarkModeState] = useState(true);
     const DARK_MODE_ACTIVE = 'pageColorMode';
     const LocalStorage = new LocalStorageHandler();
-    const darkModeStateInLS = LocalStorage.getLocalStorageKeyValue(DARK_MODE_ACTIVE) === 'true' ? true : false;
-    const [darkMode, setDarkModeState] = useState(darkModeStateInLS);
-    darkMode ? body.classList.add('dark') : body.classList.remove('dark');
+    useEffect(() => {
+        const body = document.body;
+        const darkModeStateInLS = LocalStorage.getLocalStorageKeyValue(DARK_MODE_ACTIVE) === 'true' ? true : false;
+        setDarkModeState(darkModeStateInLS);
+        darkMode ? body.classList.add('dark') : body.classList.remove('dark');
+        document.querySelector('#toogleA').checked = darkMode;
+    }, [darkMode, LocalStorage, DARK_MODE_ACTIVE])
     const setDarkMode = () => {
         LocalStorage.setLocalStorageKeyValue(DARK_MODE_ACTIVE, !darkMode);
         setDarkModeState(!darkMode);
