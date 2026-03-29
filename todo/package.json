@@ -20,8 +20,8 @@
     "gatsby-plugin-sitemap": "^6.16.0",
     "gatsby-plugin-typography": "^5.16.0",
     "gatsby-source-filesystem": "^5.16.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
